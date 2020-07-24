@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="coldWeather">Холодно</string>
+    <string name="warmWeather">Тепло</string>
+    <string name="hotWeather">Жарко</string>
+    <string name="catastrophicWeather">Катастрофа</string>
+</resources>
