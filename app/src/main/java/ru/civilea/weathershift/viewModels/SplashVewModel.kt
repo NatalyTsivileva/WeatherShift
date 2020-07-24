@@ -7,7 +7,6 @@ import androidx.navigation.NavController
 import ru.civilea.weathershift.fragments.SplashFragmentDirections
 
 class SplashVewModel(application: Application) :AndroidViewModel(application) {
-
     fun goToCityFragment(navController: NavController){
         Handler().postDelayed({
             navController.navigate(SplashFragmentDirections.actionSplashFragmentToWeatherFragment())

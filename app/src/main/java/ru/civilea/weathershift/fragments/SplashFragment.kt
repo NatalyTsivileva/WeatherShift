@@ -14,7 +14,7 @@ import ru.civilea.weathershift.viewModels.SplashVewModel
 
 class SplashFragment : Fragment() {
 
-    private val viewModel by viewModels<SplashVewModel>()
+   private val viewModel by viewModels<SplashVewModel>()
 
    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -12,11 +12,17 @@ class CityViewHolder(
 
     private var city = City()
 
+    init {
+        itemView.setOnClickListener(this)
+    }
+
     fun bind(city: City) {
         this.city = city
+        val context=itemView.context
         itemView.cityNameTV.text = city.name
         itemView.weatherValueTV.text = city.weather.degree.toString()
-        itemView.weatherTypeTV.text = city.weather.getWeatherType(itemView.context)
+        itemView.weatherTypeTV.text = city.weather.getWeatherType(context)
+        itemView.cityIV.setImageDrawable(city.weather.getWeatherImage(context))
     }
 
     override fun onClick(v: View?) {
