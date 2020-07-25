@@ -16,7 +16,7 @@ class MainApplication : Application() {
             //inject Android context
             androidContext(this@MainApplication)
             // use modules
-            modules(cityModule)
+            modules(cityModule, splashModule)
         }
 
     }

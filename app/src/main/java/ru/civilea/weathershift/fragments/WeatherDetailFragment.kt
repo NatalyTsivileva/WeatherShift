@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_weather_detail.view.*
-import kotlinx.android.synthetic.main.item_weather.view.*
-import kotlinx.android.synthetic.main.item_weather.view.cityIV
 import ru.civilea.weathershift.R
 
 class WeatherDetailFragment : Fragment() {
@@ -24,7 +22,6 @@ class WeatherDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         context?.let {
-            view.detailsCityIV.background=args.city.weather.getWeatherImage(it)
             view.detailsCityNameTV.text = args.city.name
             view.detailsWeatherNameTV.text = args.city.weather.getWeatherType(it)
         }

@@ -7,8 +7,13 @@ import org.koin.dsl.module
 import ru.civilea.weathershift.repository.CityRepositoryImpl
 import ru.civilea.weathershift.repository.network.Repository
 import ru.civilea.weathershift.viewModels.CityViewModel
+import ru.civilea.weathershift.viewModels.SplashVewModel
 
 val cityModule=module{
     single { CityRepositoryImpl()} bind Repository::class
     viewModel { CityViewModel(androidApplication(),get()) }
+}
+
+val splashModule=module{
+    viewModel { SplashVewModel(androidApplication()) }
 }

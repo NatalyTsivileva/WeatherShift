@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardCityElevation">10dp</dimen>
+    <dimen name="cardCityCornerRadius">10dp</dimen>
+    <dimen name="cardCityContentPadding">10dp</dimen>
+
+    <dimen name="cardCityWeatherImageHeight">70dp</dimen>
+    <dimen name="cardCityWeatherImageWidth">70dp</dimen>
+
+    <dimen name="cityItemContainerMarginStart">10dp</dimen>
+    <dimen name="cityItemTitleMarginTop">10dp</dimen>
+    <dimen name="cityItemTextMarginTop">10dp</dimen>
+    <dimen name="cityItemTextMarginBottom">10dp</dimen>
+
+    <dimen name="detailsCityNameTextView">30sp</dimen>
+    <dimen name="detailsWeatherDegreeTextView">20sp</dimen>
+
+</resources>

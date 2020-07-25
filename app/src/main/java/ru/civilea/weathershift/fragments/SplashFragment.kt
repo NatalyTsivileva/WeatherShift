@@ -1,20 +1,18 @@
 package ru.civilea.weathershift.fragments
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.civilea.weathershift.R
-import ru.civilea.weathershift.viewModels.CityViewModel
 import ru.civilea.weathershift.viewModels.SplashVewModel
 
 class SplashFragment : Fragment() {
 
-   private val viewModel by viewModels<SplashVewModel>()
+   private val viewModel by viewModel<SplashVewModel>()
 
    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
