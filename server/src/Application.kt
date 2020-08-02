@@ -22,7 +22,7 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 fun Application.main(){
     install(DefaultHeaders)
     install(CallLogging)
-    val repository:ServerRepository by inject()
+   // val repository:ServerRepository by inject()
 }
 
 @Suppress("unused") // Referenced in application.conf
@@ -48,10 +48,10 @@ fun Application.module(testing: Boolean = false) {
 
 
     routing {
-        val repository:ServerRepository=get()
+        val repository=ServerRepository()
 
         route("/cities") {
-            get("all") {
+            get("/all") {
                 val list=repository.getAll()
                 call.respond(list)
             }
