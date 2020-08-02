@@ -51,7 +51,7 @@ fun Application.module(testing: Boolean = false) {
         val repository:ServerRepository=get()
 
         route("/cities") {
-            get("/") {
+            get("all") {
                 val list=repository.getAll()
                 call.respond(list)
             }
