@@ -1,4 +1,4 @@
-create TABLE City (
+alter TABLE City (
     id serial primary key,
     name varchar(100),
     weatherDegree int
