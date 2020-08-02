@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_weather_info"
+    app:startDestination="@id/weatherDetailFragment">
+
+    <fragment
+        android:id="@+id/weatherDetailFragment"
+        android:name="ru.civilea.weather_info.WeatherDetailFragment"
+        android:label="fragment_weather_detail"
+        tools:layout="@layout/fragment_weather_detail">
+    <argument
+        android:name="city"
+        app:nullable="false"
+        app:argType="ru.civilea.weathershift.model.City"/>
+    </fragment>
+</navigation>

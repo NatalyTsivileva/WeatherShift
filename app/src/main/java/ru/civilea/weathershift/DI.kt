@@ -1,19 +1,10 @@
 package ru.civilea.weathershift
 
-import org.koin.android.ext.koin.androidApplication
-import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
 import org.koin.dsl.module
-import ru.civilea.weathershift.repository.CityRepositoryImpl
-import ru.civilea.weathershift.repository.network.Repository
-import ru.civilea.weathershift.viewModels.CityViewModel
-import ru.civilea.weathershift.viewModels.SplashVewModel
+import ru.civilea.core.model.Navigator
+import ru.civilea.weathershift.ru.civilea.weathershift.MainNavigatorImpl
 
-val cityModule=module{
-    single { CityRepositoryImpl()} bind Repository::class
-    viewModel { CityViewModel(androidApplication(),get()) }
-}
-
-val splashModule=module{
-    viewModel { SplashVewModel(androidApplication()) }
+val navigationModule = module {
+     single { MainNavigatorImpl() } bind Navigator::class
 }

@@ -7,33 +7,22 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="ru.civilea.weathershift.fragments.SplashFragment"
+        android:name="ru.civilea.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_weatherFragment"
-            app:destination="@id/weatherFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right"
-            app:popExitAnim="@android:anim/slide_out_right"
-            app:popUpTo="@id/nav_main" />
-    </fragment>
-    <fragment
-        android:id="@+id/weatherFragment"
-        android:name="ru.civilea.weathershift.fragments.CityFragment"
-        android:label="fragment_weather"
-        tools:layout="@layout/fragment_weather" >
-        <action
-            android:id="@+id/action_weatherFragment_to_weatherDetailFragment"
-            app:destination="@id/weatherDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/weatherDetailFragment"
-        android:name="ru.civilea.weathershift.fragments.WeatherDetailFragment"
-        android:label="fragment_weather_detail"
-        tools:layout="@layout/fragment_weather_detail" >
+        tools:layout="@layout/fragment_splash" />
+    <include app:graph="@navigation/nav_weather_info" />
+
+    <action
+        android:id="@+id/action_global_nav_weather_info"
+        app:destination="@id/nav_weather_info" >
         <argument
             android:name="city"
-            app:argType="ru.civilea.weathershift.model.City" />
-    </fragment>
+            app:nullable="false"
+            app:argType="ru.civilea.weathershift.model.City"/>
+    </action>
+
+    <include app:graph="@navigation/nav_city" />
+    <action
+        android:id="@+id/action_global_nav_city"
+        app:destination="@id/nav_city" />
 </navigation>

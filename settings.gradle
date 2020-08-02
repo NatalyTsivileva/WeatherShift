@@ -1,2 +1,8 @@
+include ':network'
+include ':splash'
+include ':weather_info'
+include ':city_list'
+include ':core'
 include ':app'
+include ':server'
 rootProject.name = "WeatherShift"

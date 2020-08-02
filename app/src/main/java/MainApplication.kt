@@ -4,6 +4,8 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import ru.civilea.city_list.di.cityModule
+import ru.civilea.splash.di.splashModule
 
 class MainApplication : Application() {
 
@@ -11,12 +13,9 @@ class MainApplication : Application() {
         super.onCreate()
 
         startKoin {
-            // Koin Android logger
             androidLogger()
-            //inject Android context
             androidContext(this@MainApplication)
-            // use modules
-            modules(cityModule, splashModule)
+            modules(cityModule, splashModule,navigationModule)
         }
 
     }
