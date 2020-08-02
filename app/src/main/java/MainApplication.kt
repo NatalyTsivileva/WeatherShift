@@ -1,6 +1,7 @@
 package ru.civilea.weathershift
 
 import android.app.Application
+import com.weathershift.di.serverModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -15,7 +16,11 @@ class MainApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MainApplication)
-            modules(cityModule, splashModule,navigationModule)
+            modules(
+                cityModule,
+                splashModule,
+                navigationModule,
+                serverModule)
         }
 
     }

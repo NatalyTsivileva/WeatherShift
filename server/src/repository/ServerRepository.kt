@@ -10,23 +10,23 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.statements.InsertStatement
 import ru.civilea.common.Repository
 import ru.civilea.common.models.City
+import ru.civilea.common.models.CityAndWeatherDto
 import ru.civilea.common.models.CreateCityDto
 import ru.civilea.common.models.Weather
 
-class ServerRepository : Repository<City, Weathers> {
+class ServerRepository : Repository<City, CityAndWeatherDto,City> {
     override suspend fun getAll() =
         dbQuery {
             Cities.selectAll().map { it.toCities() }
         }
 
-    override suspend fun add(parent: City, child: Weathers) {
+    override suspend fun add(data:CityAndWeatherDto) {
         dbQuery {
-           val weather= Weathers.insert {
-               degree = child.degree
+           val weather= Weathers.insert {insertStatement: InsertStatement<Number> ->
+               insertStatement[degree] = data.weatherDto.degree
             }
-
             Cities.insert { insertStatement: InsertStatement<Number> ->
-                insertStatement[name] = parent.name
+                insertStatement[name] = data.cityDto.name
                 insertStatement[weatherId] = weather[id]
             }
         }
