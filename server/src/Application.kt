@@ -10,7 +10,6 @@ import io.ktor.http.*
 import io.ktor.gson.*
 import io.ktor.features.*
 import io.ktor.request.receive
-import org.koin.ktor.ext.get
 import org.koin.ktor.ext.inject
 import ru.civilea.common.models.City
 import ru.civilea.common.models.CityAndWeatherDto
@@ -45,12 +44,11 @@ fun Application.module(testing: Boolean = false) {
         init()
     }
 
+    val repository:ServerRepository by inject()
 
     routing {
-        val repository:ServerRepository by inject()
-
-        route("/cities") {
-            get("/all") {
+        route("cities") {
+            get {
                 val list=repository.getAll()
                 call.respond(list)
             }
