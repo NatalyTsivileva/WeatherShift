@@ -1,5 +1,5 @@
 create TABLE City (
     id serial primary key,
-    name text,
+    name varchar(100),
     weatherDegree integer
 )
