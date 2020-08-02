@@ -6,5 +6,5 @@ import ru.civilea.common.models.City
 fun ResultRow.toCities()= City(
     id = this[Cities.id],
     name = this[Cities.name],
-    weatherId = this[Cities.weatherId]
+    weatherDegree = this[Cities.weatherDegree]
 )

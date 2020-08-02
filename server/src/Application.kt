@@ -1,19 +1,14 @@
 package com.weathershift
 
-import com.sun.xml.internal.ws.util.InjectionPlan
 import com.weathershift.db.DatabaseFactory
 import com.weathershift.repository.ServerRepository
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.routing.*
-import io.ktor.http.*
 import io.ktor.gson.*
 import io.ktor.features.*
 import io.ktor.request.receive
-import org.koin.ktor.ext.inject
-import ru.civilea.common.models.City
-import ru.civilea.common.models.CityAndWeatherDto
-import ru.civilea.common.models.Weather
+import ru.civilea.common.models.CreateCityDto
 import java.net.URI
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
@@ -54,7 +49,7 @@ fun Application.module(testing: Boolean = false) {
             }
 
             post{
-              val data=call.receive<CityAndWeatherDto>()
+              val data=call.receive<CreateCityDto>()
               repository.add(data)
             }
 

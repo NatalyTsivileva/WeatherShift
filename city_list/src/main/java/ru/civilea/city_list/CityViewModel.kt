@@ -8,13 +8,12 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 import ru.civilea.common.Repository
 import ru.civilea.common.models.City
-import ru.civilea.common.models.CityAndWeatherDto
-import ru.civilea.common.models.Weather
+import ru.civilea.common.models.CreateCityDto
 import ru.civilea.core.model.Navigator
 
 class CityViewModel(
     application: Application,
-    private val repository: Repository<City, CityAndWeatherDto,City>
+    private val repository: Repository<City, CreateCityDto,City>
 ) : AndroidViewModel(application) {
 
     private var data = listOf<City>()
