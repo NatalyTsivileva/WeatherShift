@@ -17,11 +17,11 @@ class ServerRepository : Repository<City, CreateCityDto,City> {
             Cities.selectAll().map { it.toCities() }
         }
 
-    override suspend fun add(data:CreateCityDto) {
+    override suspend fun add(elem:CreateCityDto) {
         dbQuery {
             Cities.insert { insertStatement: InsertStatement<Number> ->
-                insertStatement[name] = data.name
-                insertStatement[weatherDegree] = data.weatherDegree
+                insertStatement[name] = elem.name
+                insertStatement[weatherDegree] = elem.weatherDegree
             }
         }
     }
