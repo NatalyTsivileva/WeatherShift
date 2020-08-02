@@ -44,7 +44,7 @@ fun Application.module(testing: Boolean = false) {
         init()
     }
 
-    val repository:ServerRepository by inject()
+    val repository=ServerRepository()
 
     routing {
         route("cities") {
