@@ -3,7 +3,7 @@ package ru.civilea.core.model
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import ru.civilea.common.Weather
+import ru.civilea.common.models.Weather
 import ru.civilea.core.R
 
 fun Fragment.getMainNavController()=

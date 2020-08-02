@@ -1,12 +1,21 @@
 package ru.civilea.network
 
-import ru.civilea.common.City
+import ru.civilea.common.models.City
 import ru.civilea.common.CityFactory
-import ru.civilea.core.model.Repository
+import ru.civilea.common.Repository
+import ru.civilea.common.models.Weather
 
-class CityRepositoryImpl:Repository<City> {
+class CityRepositoryImpl: Repository<City,Weather> {
     //todo : not load
-    override fun getAll(): List<City> {
+    override suspend fun getAll(): List<City> {
         return CityFactory.getRandomCityList(size = 20)
+    }
+
+    override suspend fun add(parent: City, child: Weather) {
+        //TODO("Not yet implemented")
+    }
+
+    override suspend fun deleteParent(parent: City) {
+        //TODO("Not yet implemented")
     }
 }

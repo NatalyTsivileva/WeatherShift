@@ -3,14 +3,17 @@ package ru.civilea.city_list
 import android.app.Application
 import android.arch.lifecycle.SingleLiveEvent
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import ru.civilea.common.City
+import kotlinx.coroutines.launch
+import ru.civilea.common.Repository
+import ru.civilea.common.models.City
+import ru.civilea.common.models.Weather
 import ru.civilea.core.model.Navigator
-import ru.civilea.core.model.Repository
 
 class CityViewModel(
     application: Application,
-    private val repository: Repository<City>
+    private val repository: Repository<City, Weather>
 ) : AndroidViewModel(application) {
 
     private var data = listOf<City>()
@@ -19,8 +22,10 @@ class CityViewModel(
     fun getData() = data
 
     fun downloadData() {
-        data = repository.getAll()
-        loadingDataEvent.postValue(data)
+        viewModelScope.launch {
+            data = repository.getAll()
+            loadingDataEvent.postValue(data)
+        }
     }
 
     fun goToCityWeatherDetail(
@@ -28,7 +33,7 @@ class CityViewModel(
         navController: NavController,
         city: City
     ) {
-        navigator.navigateToWeatherInfo(navController,city)
+        navigator.navigateToWeatherInfo(navController, city)
     }
 
 }

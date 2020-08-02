@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_weather_detail.view.*
-import ru.civilea.common.City
-import ru.civilea.core.model.getWeatherType
+import ru.civilea.common.models.City
 
 
 class WeatherDetailFragment : Fragment() {
@@ -25,7 +24,8 @@ class WeatherDetailFragment : Fragment() {
             val city: City = arguments?.get("city") as City
             context?.let {
                 view.detailsCityNameTV.text = city.name
-                view.detailsWeatherNameTV.text = city.weather.getWeatherType(it)
+                //TODO
+                // view.detailsWeatherNameTV.text = city.weather.getWeatherType(it)
             }
         } catch (e: Exception) {
             e.printStackTrace()

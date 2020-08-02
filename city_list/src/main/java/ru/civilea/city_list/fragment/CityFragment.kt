@@ -13,7 +13,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.civilea.city_list.CityViewModel
 import ru.civilea.city_list.R
 import ru.civilea.city_list.adapter.CityRecyclerAdapter
-import ru.civilea.common.City
+import ru.civilea.common.models.City
 import ru.civilea.core.model.getMainNavController
 
 class CityFragment : Fragment() {

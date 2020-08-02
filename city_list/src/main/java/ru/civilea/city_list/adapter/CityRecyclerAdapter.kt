@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.civilea.city_list.R
-import ru.civilea.common.City
+import ru.civilea.common.models.City
 
 class CityRecyclerAdapter(
     private var listener: ((city: City) -> Unit)? = null

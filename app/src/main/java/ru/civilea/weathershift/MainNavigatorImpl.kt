@@ -1,7 +1,7 @@
 package ru.civilea.weathershift.ru.civilea.weathershift
 
 import androidx.navigation.NavController
-import ru.civilea.common.City
+import ru.civilea.common.models.City
 import ru.civilea.core.model.Navigator
 import ru.civilea.weathershift.NavMainDirections
 
