@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_weather_detail.view.*
+import ru.civilea.common.City
 import ru.civilea.core.model.getWeatherType
-import ru.civilea.weathershift.model.City
 
 
 class WeatherDetailFragment : Fragment() {

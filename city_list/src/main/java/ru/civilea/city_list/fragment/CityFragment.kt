@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_city_list.view.*
 import org.koin.android.ext.android.get
@@ -14,8 +13,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.civilea.city_list.CityViewModel
 import ru.civilea.city_list.R
 import ru.civilea.city_list.adapter.CityRecyclerAdapter
+import ru.civilea.common.City
 import ru.civilea.core.model.getMainNavController
-import ru.civilea.weathershift.model.City
 
 class CityFragment : Fragment() {
 

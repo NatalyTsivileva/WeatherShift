@@ -1,7 +1,5 @@
-package ru.civilea.core.model
+package ru.civilea.common
 
-import ru.civilea.weathershift.model.City
-import ru.civilea.weathershift.model.Weather
 import kotlin.random.Random
 
 class CityFactory {

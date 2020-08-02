@@ -13,6 +13,6 @@
     <argument
         android:name="city"
         app:nullable="false"
-        app:argType="ru.civilea.weathershift.model.City"/>
+        app:argType="ru.civilea.common.City"/>
     </fragment>
 </navigation>

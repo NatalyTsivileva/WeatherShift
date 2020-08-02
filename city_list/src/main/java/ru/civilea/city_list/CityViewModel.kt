@@ -2,12 +2,11 @@ package ru.civilea.city_list
 
 import android.app.Application
 import android.arch.lifecycle.SingleLiveEvent
-import android.os.Handler
 import androidx.lifecycle.AndroidViewModel
 import androidx.navigation.NavController
+import ru.civilea.common.City
 import ru.civilea.core.model.Navigator
 import ru.civilea.core.model.Repository
-import ru.civilea.weathershift.model.City
 
 class CityViewModel(
     application: Application,

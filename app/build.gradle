@@ -53,6 +53,7 @@ dependencies {
     implementation project(path: ':city_list')
     implementation project(path: ':server')
     implementation project(path: ':splash')
+    implementation project(path: ':common')
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

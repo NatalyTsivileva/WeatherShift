@@ -3,9 +3,9 @@ package ru.civilea.city_list.adapter
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_weather.view.*
+import ru.civilea.common.City
 import ru.civilea.core.model.getWeatherImage
 import ru.civilea.core.model.getWeatherType
-import ru.civilea.weathershift.model.City
 
 class CityViewHolder(
     itemView: View,
