@@ -1,5 +1,5 @@
-create TABLE NOTES (
+create TABLE City (
     id serial primary key,
-    title varchar(100),
-    description varchar(1024)
+    name varchar(100),
+    weatherDegree int
 )
