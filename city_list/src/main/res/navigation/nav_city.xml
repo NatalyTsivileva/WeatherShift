@@ -8,5 +8,19 @@
         android:id="@+id/cityFragment2"
         android:name="ru.civilea.city_list.fragment.CityFragment"
         android:label="fragment_city_list"
-        tools:layout="@layout/fragment_city_list" />
+        tools:layout="@layout/fragment_city_list">
+        <action
+            android:id="@+id/action_cityFragment2_to_editCityFragment"
+            app:destination="@id/editCityFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/editCityFragment"
+        android:name="ru.civilea.city_list.fragment.EditCityFragment"
+        android:label="fragment_edit_city"
+        tools:layout="@layout/fragment_edit_city">
+        <argument
+            android:name="city"
+            app:argType="ru.civilea.common.models.City" />
+    </dialog>
 </navigation>

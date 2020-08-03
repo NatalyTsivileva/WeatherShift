@@ -1,13 +1,14 @@
 package ru.civilea.city_list.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.civilea.city_list.R
 import ru.civilea.common.models.City
 
 class CityRecyclerAdapter(
-    private var listener: ((city: City) -> Unit)? = null
+    private var listener: ((city: City,view: View) -> Unit)? = null
 ) : RecyclerView.Adapter<CityViewHolder>() {
 
     private var list = mutableListOf<City>()

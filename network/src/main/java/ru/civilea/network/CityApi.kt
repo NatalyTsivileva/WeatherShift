@@ -11,10 +11,10 @@ interface CityApi {
     @POST("cities")
     suspend fun add(@Body elem: CreateCityDto)
 
-    @DELETE
+    @DELETE("cities")
     suspend fun deleteById(@Query("id") id: Long)
 
-    @POST
+    @POST("cities/update")
     suspend fun updateElem(@Body elem: City): Int
 }
 

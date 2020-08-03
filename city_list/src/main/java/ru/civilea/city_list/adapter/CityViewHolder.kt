@@ -9,13 +9,15 @@ import ru.civilea.core.model.getWeatherType
 
 class CityViewHolder(
     itemView: View,
-    val listener: ((city: City) -> Unit)? = null
+    val listener: ((city: City,view: View) -> Unit)? = null
 ) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
     private var city = City()
 
     init {
-        itemView.setOnClickListener(this)
+        itemView.cityLinearContainer.setOnClickListener(this)
+        itemView.editBTN.setOnClickListener(this)
+        itemView.deleteBTN.setOnClickListener(this)
     }
 
     fun bind(city: City) {
@@ -28,8 +30,9 @@ class CityViewHolder(
     }
 
     override fun onClick(v: View?) {
-        //TODO: change to "when(v)" if need
-        listener?.invoke(city)
+        v?.let {
+            listener?.invoke(city,it)
+        }
     }
 
 }

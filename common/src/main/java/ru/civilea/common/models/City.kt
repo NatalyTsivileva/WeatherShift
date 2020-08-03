@@ -12,5 +12,5 @@ data class City(
 
 
     @SerializedName("weatherdegree")
-    val weatherDegree: Long = 0
+    val weatherDegree: Int = 0
 ) : Serializable

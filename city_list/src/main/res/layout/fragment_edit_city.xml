@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".fragment.EditCityFragment">
+
+    <EditText
+        android:id="@+id/dialogCityNameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cityName" />
+
+    <EditText
+        android:id="@+id/dialogWeatherET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/weather" />
+
+    <Button
+        android:text="@string/update"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/updateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

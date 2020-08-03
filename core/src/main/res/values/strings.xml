@@ -4,6 +4,7 @@
     <string name="warmWeather">Warm</string>
     <string name="hotWeather">Hot</string>
     <string name="catastrophicWeather">Catastrophic</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="emptyField">Please, enter the values</string>
+    <string name="update">Update</string>
 </resources>

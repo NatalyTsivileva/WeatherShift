@@ -7,6 +7,7 @@
     tools:context="ru.civilea.city_list.fragment.CityFragment">
 
     <LinearLayout
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -31,13 +32,14 @@
             android:textColor="@android:color/secondary_text_light" />
 
         <Button
-            android:id="@+id/addBTN"
+            android:background="@android:color/holo_orange_light"
+            android:id="@+id/addCityBTN"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="2"
             android:text="add"
-            android:textColor="@android:color/secondary_text_light" />
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
 
