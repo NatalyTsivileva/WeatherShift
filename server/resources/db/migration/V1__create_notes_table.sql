@@ -1,5 +1,5 @@
-create TABLE Cities (
+create TABLE Cities(
     id serial primary key,
-    name varchar(100),
+    name text,
     weatherDegree int
 )
