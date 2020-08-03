@@ -4,6 +4,8 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_weather.view.*
 import ru.civilea.common.models.City
+import ru.civilea.core.model.getWeatherImage
+import ru.civilea.core.model.getWeatherType
 
 class CityViewHolder(
     itemView: View,
@@ -18,12 +20,11 @@ class CityViewHolder(
 
     fun bind(city: City) {
         this.city = city
-        val context=itemView.context
+        val context = itemView.context
         itemView.cityNameTV.text = city.name
-        //TODO
-        //itemView.weatherValueTV.text = city.weather.degree.toString()
-        //itemView.weatherTypeTV.text = city.weather.getWeatherType(context)
-        //itemView.cityIV.setImageDrawable(city.weather.getWeatherImage(context))
+        itemView.weatherValueTV.text = city.weatherDegree.toString()
+        itemView.weatherTypeTV.text = city.getWeatherType(context)
+        itemView.cityIV.setImageDrawable(city.getWeatherImage(context))
     }
 
     override fun onClick(v: View?) {

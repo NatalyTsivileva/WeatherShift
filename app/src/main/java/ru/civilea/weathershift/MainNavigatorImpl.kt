@@ -5,13 +5,13 @@ import ru.civilea.common.models.City
 import ru.civilea.core.model.Navigator
 import ru.civilea.weathershift.NavMainDirections
 
-class MainNavigatorImpl():Navigator {
+class MainNavigatorImpl() : Navigator {
 
     override fun navigateToCityList(controller: NavController) {
-       controller.navigate(NavMainDirections.actionGlobalNavCity())
+        controller.navigate(NavMainDirections.actionGlobalNavCity())
     }
 
-    override fun navigateToWeatherInfo(controller: NavController,param: City) {
+    override fun navigateToWeatherInfo(controller: NavController, param: City) {
         controller.navigate(NavMainDirections.actionGlobalNavWeatherInfo(city = param))
     }
 }

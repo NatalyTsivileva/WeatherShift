@@ -3,7 +3,6 @@ package com.weathershift.repository
 import com.weathershift.db.dbQuery
 import com.weathershift.db.table.Cities
 import com.weathershift.toCities
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.selectAll
@@ -38,16 +37,15 @@ class ServerRepository : Repository<City, CreateCityDto> {
     }
 
     override suspend fun updateElem(elem: City): Int {
-        var counter=0
+        var counter = 0
         dbQuery {
-                Cities.update({Cities.id eq elem.id}) {     updateStatement: UpdateStatement ->
-                updateStatement[name]=elem.name
-                updateStatement[weatherDegree]=elem.weatherDegree
+            Cities.update({ Cities.id eq elem.id }) { updateStatement: UpdateStatement ->
+                updateStatement[name] = elem.name
+                updateStatement[weatherDegree] = elem.weatherDegree
                 counter++
             }
         }
         return counter
     }
-
 }
 

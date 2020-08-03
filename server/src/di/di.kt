@@ -6,8 +6,8 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 import ru.civilea.common.Repository
 
-val serverModule=module{
-    single(named("serverRepo")){
+val serverModule = module {
+    single(named("serverRepo")) {
         ServerRepository()
-    }bind Repository::class
+    } bind Repository::class
 }

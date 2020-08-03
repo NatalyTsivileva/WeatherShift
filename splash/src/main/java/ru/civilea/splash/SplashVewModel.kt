@@ -1,14 +1,12 @@
 package ru.civilea.splash
 
-import android.app.Application
 import android.os.Handler
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import ru.civilea.core.model.Navigator
 
 class SplashVewModel(
-    application: Application
-) : AndroidViewModel(application) {
+) : ViewModel() {
 
     fun goToCityFragment(
         navigator: Navigator,

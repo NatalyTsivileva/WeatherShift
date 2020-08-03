@@ -14,11 +14,11 @@
 
     <action
         android:id="@+id/action_global_nav_weather_info"
-        app:destination="@id/nav_weather_info" >
+        app:destination="@id/nav_weather_info">
         <argument
             android:name="city"
             app:nullable="false"
-            app:argType="ru.civilea.common.models.City"/>
+            app:argType="ru.civilea.common.models.City" />
     </action>
 
     <include app:graph="@navigation/nav_city" />

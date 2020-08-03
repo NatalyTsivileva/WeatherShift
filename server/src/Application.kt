@@ -63,12 +63,12 @@ fun Application.module(testing: Boolean = false) {
                 call.respond(HttpStatusCode.NotFound)
             }
 
-            post(path = "/update"){
+            post(path = "/update") {
                 val data = call.receive<City>()
-                val updatedCount=repository.updateElem(data)
-                if(updatedCount>0){
+                val updatedCount = repository.updateElem(data)
+                if (updatedCount > 0) {
                     call.respond(HttpStatusCode.OK)
-                }else{
+                } else {
                     call.respond(HttpStatusCode.NotFound)
                 }
             }

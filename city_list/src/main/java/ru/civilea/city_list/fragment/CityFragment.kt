@@ -1,9 +1,7 @@
 package ru.civilea.city_list.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,25 +14,20 @@ import ru.civilea.city_list.adapter.CityRecyclerAdapter
 import ru.civilea.common.models.City
 import ru.civilea.core.model.getMainNavController
 
-class CityFragment : Fragment() {
+class CityFragment : Fragment(R.layout.fragment_city_list) {
 
     val viewModel by viewModel<CityViewModel>()
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_city_list, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
 
-        viewModel.loadingDataEvent.observe(viewLifecycleOwner, Observer {  getAdapter()?.setList(it)})
+        viewModel.loadingDataEvent.observe(
+            viewLifecycleOwner,
+            Observer { getAdapter()?.setList(it) }
+        )
         viewModel.downloadData()
     }
-
 
     private fun getAdapter() = view?.cityRecycler?.adapter as? CityRecyclerAdapter
 
@@ -47,7 +40,7 @@ class CityFragment : Fragment() {
 
     private fun onCityClick(city: City) {
         getMainNavController()?.let {
-            viewModel.goToCityWeatherDetail(navigator = get(),city = city,navController = it)
+            viewModel.goToCityWeatherDetail(navigator = get(), city = city, navController = it)
         }
     }
 }

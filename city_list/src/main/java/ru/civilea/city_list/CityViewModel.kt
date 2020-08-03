@@ -1,8 +1,7 @@
 package ru.civilea.city_list
 
-import android.app.Application
 import android.arch.lifecycle.SingleLiveEvent
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
@@ -12,14 +11,11 @@ import ru.civilea.common.models.CreateCityDto
 import ru.civilea.core.model.Navigator
 
 class CityViewModel(
-    application: Application,
     private val repository: Repository<City, CreateCityDto>
-) : AndroidViewModel(application) {
+) : ViewModel() {
 
     private var data = listOf<City>()
     val loadingDataEvent = SingleLiveEvent<List<City>>()
-
-    fun getData() = data
 
     fun downloadData() {
         viewModelScope.launch {

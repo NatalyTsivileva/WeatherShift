@@ -1,4 +1,4 @@
-package ru.civilea.weathershift
+package ru.civilea.weathershift.ru.civilea.weathershift.di
 
 import org.koin.dsl.bind
 import org.koin.dsl.module
@@ -6,5 +6,5 @@ import ru.civilea.core.model.Navigator
 import ru.civilea.weathershift.ru.civilea.weathershift.MainNavigatorImpl
 
 val navigationModule = module {
-     single { MainNavigatorImpl() } bind Navigator::class
+    single { MainNavigatorImpl() } bind Navigator::class
 }

@@ -18,10 +18,10 @@ class CityFactory {
             return list
         }
 
-        fun getRandomWeather() =Random.nextLong(
-                from = -100,
-                until = 100
-            )
+        fun getRandomWeather() = Random.nextLong(
+            from = -100,
+            until = 100
+        )
 
     }
 }
