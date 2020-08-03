@@ -5,8 +5,9 @@ package ru.civilea.common
  * @param A - type for add request
  * @param D - type for delete request
  */
-interface Repository<G,A,D> {
-    suspend fun getAll(): List<G>
-    suspend fun add(elem:A)
-    suspend fun deleteParent(parent: D)
+interface Repository<T,D> {
+    suspend fun getAll(): List<T>
+    suspend fun add(elem:D)
+    suspend fun deleteById(id: Long)
+    suspend fun updateElem(elem: T):Int
 }

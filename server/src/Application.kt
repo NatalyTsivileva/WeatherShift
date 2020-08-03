@@ -1,13 +1,18 @@
 package com.weathershift
 
+import com.oracle.util.Checksums.update
 import com.weathershift.db.DatabaseFactory
 import com.weathershift.repository.ServerRepository
-import io.ktor.application.*
-import io.ktor.response.*
-import io.ktor.routing.*
-import io.ktor.gson.*
-import io.ktor.features.*
+import io.ktor.application.Application
+import io.ktor.application.call
+import io.ktor.application.install
+import io.ktor.features.ContentNegotiation
+import io.ktor.gson.gson
+import io.ktor.http.HttpStatusCode
 import io.ktor.request.receive
+import io.ktor.response.respond
+import io.ktor.routing.*
+import ru.civilea.common.models.City
 import ru.civilea.common.models.CreateCityDto
 import java.net.URI
 
@@ -34,22 +39,39 @@ fun Application.module(testing: Boolean = false) {
         init()
     }
 
-    val repository=ServerRepository()
+    val repository = ServerRepository()
 
     routing {
         route("cities") {
             get {
-                val list=repository.getAll()
+                val list = repository.getAll()
                 call.respond(list)
             }
 
-            post{
-              val data=call.receive<CreateCityDto>()
-              repository.add(data)
+            post {
+                val data = call.receive<CreateCityDto>()
+                repository.add(data)
+                call.respond(HttpStatusCode.OK)
             }
 
             delete {
+                val id = call.request.queryParameters["id"]?.toLong()
+                id?.let {
+                    repository.deleteById(it)
+                    call.respond(HttpStatusCode.OK)
+                    return@delete
+                }
+                call.respond(HttpStatusCode.NotFound)
+            }
 
+            post(path = "/update"){
+                val data = call.receive<City>()
+                val updatedCount=repository.updateElem(data)
+                if(updatedCount>0){
+                    call.respond(HttpStatusCode.OK)
+                }else{
+                    call.respond(HttpStatusCode.NotFound)
+                }
             }
         }
     }

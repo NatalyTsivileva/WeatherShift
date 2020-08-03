@@ -13,7 +13,7 @@ import ru.civilea.core.model.Navigator
 
 class CityViewModel(
     application: Application,
-    private val repository: Repository<City, CreateCityDto,City>
+    private val repository: Repository<City, CreateCityDto>
 ) : AndroidViewModel(application) {
 
     private var data = listOf<City>()
