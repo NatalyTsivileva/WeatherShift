@@ -19,7 +19,6 @@ class ServerRepository : Repository<City, CreateCityDto,City> {
 
     override suspend fun add(elem:CreateCityDto) {
         dbQuery {
-
             Cities.insert { insertStatement: InsertStatement<Number> ->
                 insertStatement[name] = elem.name
                 insertStatement[weatherDegree] = elem.weatherDegree

@@ -3,5 +3,5 @@ import java.io.Serializable
 
 data class CreateCityDto (
 val name:String="",
-val weatherDegree:Long=0
+val weatherDegree:Int=0
 ) : Serializable
