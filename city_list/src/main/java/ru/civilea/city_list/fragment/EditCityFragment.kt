@@ -9,13 +9,14 @@ import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_edit_city.view.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.civilea.city_list.CityViewModel
 import ru.civilea.city_list.R
 import ru.civilea.common.models.City
 
 class EditCityFragment : DialogFragment() {
     val args by navArgs<EditCityFragmentArgs>()
-    val viewModel by sharedViewModel<CityViewModel>()
+    val viewModel by viewModel<CityViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

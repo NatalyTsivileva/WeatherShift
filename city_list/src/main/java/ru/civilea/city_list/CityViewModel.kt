@@ -15,12 +15,9 @@ import ru.civilea.core.model.Navigator
 class CityViewModel(
     private val repository: Repository<City, CreateCityDto>
 ) : ViewModel() {
-
     val loadingDataEvent: LiveData<List<City>>
         get() = _loadingLiveData
-
     private val _loadingLiveData = MutableLiveData<List<City>>()
-
 
     fun downloadData() {
         viewModelScope.launch {
