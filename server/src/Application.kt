@@ -1,6 +1,5 @@
 package com.weathershift
 
-import com.oracle.util.Checksums.update
 import com.weathershift.db.DatabaseFactory
 import com.weathershift.repository.ServerRepository
 import io.ktor.application.Application
