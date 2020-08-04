@@ -33,7 +33,6 @@ class EditCityFragment : DialogFragment() {
         view.updateBtn.setOnClickListener {
             createCity()?.let {
                 viewModel.updateCity(it)
-                viewModel.downloadData()
                 findNavController().popBackStack()
             }
         }

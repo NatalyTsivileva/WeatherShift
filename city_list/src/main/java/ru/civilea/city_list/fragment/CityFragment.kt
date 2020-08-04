@@ -31,7 +31,6 @@ class CityFragment : Fragment(R.layout.fragment_city_list) {
         view.addCityBTN.setOnClickListener {
             getCityFromView()?.let {
                 viewModel.addCity(it)
-                viewModel.downloadData()
             }
         }
         viewModel.downloadData()
@@ -55,7 +54,6 @@ class CityFragment : Fragment(R.layout.fragment_city_list) {
             }
             R.id.deleteBTN -> {
                 viewModel.deleteCity(city.id)
-                viewModel.downloadData()
             }
 
             R.id.cityLinearContainer -> {

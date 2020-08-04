@@ -30,18 +30,21 @@ class CityViewModel(
     fun addCity(city: CreateCityDto) {
         viewModelScope.launch {
             repository.add(city)
+            downloadData()
         }
     }
 
     fun deleteCity(id: Long) {
         viewModelScope.launch {
             repository.deleteById(id)
+            downloadData()
         }
     }
 
     fun updateCity(city: City) {
         viewModelScope.launch {
             repository.updateElem(city)
+            downloadData()
         }
     }
 

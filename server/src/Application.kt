@@ -48,6 +48,18 @@ fun Application.module(testing: Boolean = false) {
                 call.respond(list)
             }
 
+            get("/page") {
+                val startId = call.request.queryParameters["startId"]?.toInt()
+                val pageSize = call.request.queryParameters["pageSize"]?.toInt()
+                val list =
+                    if (startId == null || pageSize == null) {
+                        repository.getAll()
+                    } else {
+                        repository.getPage(startId, pageSize)
+                    }
+                call.respond(list)
+            }
+
             post {
                 val data = call.receive<CreateCityDto>()
                 repository.add(data)
@@ -68,9 +80,9 @@ fun Application.module(testing: Boolean = false) {
                 val data = call.receive<City>()
                 val updatedCount = repository.updateElem(data)
                 if (updatedCount > 0) {
-                    call.respond(HttpStatusCode.OK,updatedCount)
+                    call.respond(HttpStatusCode.OK, updatedCount)
                 } else {
-                    call.respond(HttpStatusCode.NotFound,0)
+                    call.respond(HttpStatusCode.NotFound, 0)
                 }
             }
         }
