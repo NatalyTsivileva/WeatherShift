@@ -42,8 +42,7 @@ class EditCityFragment : DialogFragment() {
         return try {
             City(id = args.city.id, name = name, weatherDegree = weather.toInt())
         } catch (e: Exception) {
-            Toast.makeText(context, resources.getString(R.string.emptyField), Toast.LENGTH_LONG)
-                .show()
+            Toast.makeText(context, resources.getString(R.string.emptyField), Toast.LENGTH_LONG).show()
             null
         }
     }
