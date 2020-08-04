@@ -11,19 +11,24 @@ import ru.civilea.common.Repository
 import ru.civilea.common.models.City
 import ru.civilea.common.models.CreateCityDto
 import ru.civilea.core.model.Navigator
+import ru.civilea.core.model.pagination.Paginator
 
 class CityViewModel(
+    private val paginator: Paginator<City>,
     private val repository: Repository<City, CreateCityDto>
 ) : ViewModel() {
 
+
     val loadingDataEvent: LiveData<List<City>>
         get() = _loadingLiveData
+
     private val _loadingLiveData = MutableLiveData<List<City>>()
 
-    fun downloadData() {
+    fun downloadData(page: Int = 0) {
         viewModelScope.launch {
-            val data = repository.getAll()
-            _loadingLiveData.postValue(data)
+            paginator.currentPage = page
+            paginator.loadNewPage()
+            _loadingLiveData.postValue(paginator.currentData)
         }
     }
 
@@ -60,7 +65,7 @@ class CityViewModel(
         navController: NavController,
         city: City
     ) {
-       navController.navigate(CityFragmentDirections.actionCityFragment2ToEditCityFragment(city))
+        navController.navigate(CityFragmentDirections.actionCityFragment2ToEditCityFragment(city))
     }
 
 }

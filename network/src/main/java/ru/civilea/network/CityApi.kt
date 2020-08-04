@@ -8,6 +8,14 @@ interface CityApi {
     @GET("cities")
     suspend fun getAll(): List<City>
 
+    @GET("cities")
+    suspend fun getPage(
+        @Query("startId")
+        startId:Long,
+        @Query("pageSize")
+        pageSize:Int=10
+    ): List<City>
+
     @POST("cities")
     suspend fun add(@Body elem: CreateCityDto)
 

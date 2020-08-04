@@ -10,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import ru.civilea.common.Repository
 import ru.civilea.network.CityApi
 import ru.civilea.network.CityRepository
+import java.util.concurrent.TimeUnit
 
 val baseUrl="https://shiftweather.herokuapp.com/"
 val networkModule=module{
@@ -17,6 +18,7 @@ val networkModule=module{
     interceptor.level = HttpLoggingInterceptor.Level.BODY
     val client = OkHttpClient.Builder()
         .addInterceptor(interceptor)
+        .connectTimeout(60,TimeUnit.SECONDS)
         .build()
     val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
