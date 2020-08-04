@@ -20,7 +20,7 @@ import ru.civilea.core.model.getMainNavController
 
 class CityFragment : Fragment(R.layout.fragment_city_list) {
 
-    val viewModel by viewModel<CityViewModel>()
+    val viewModel by sharedViewModel<CityViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

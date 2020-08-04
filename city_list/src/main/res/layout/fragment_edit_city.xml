@@ -6,22 +6,30 @@
     android:orientation="vertical"
     tools:context=".fragment.EditCityFragment">
 
-    <EditText
-        android:id="@+id/dialogCityNameET"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/cityName" />
+        android:layout_margin="20dp">
 
-    <EditText
-        android:id="@+id/dialogWeatherET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/weather" />
+        <EditText
+            android:id="@+id/dialogCityNameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cityName" />
 
-    <Button
-        android:text="@string/update"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/updateBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/dialogWeatherET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/weather" />
+
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/update" />
+
+    </LinearLayout>
 </LinearLayout>

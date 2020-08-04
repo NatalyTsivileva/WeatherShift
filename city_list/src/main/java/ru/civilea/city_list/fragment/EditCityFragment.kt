@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_edit_city.view.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -16,7 +17,7 @@ import ru.civilea.common.models.City
 
 class EditCityFragment : DialogFragment() {
     val args by navArgs<EditCityFragmentArgs>()
-    val viewModel by viewModel<CityViewModel>()
+    val viewModel by sharedViewModel<CityViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +33,8 @@ class EditCityFragment : DialogFragment() {
         view.updateBtn.setOnClickListener {
             createCity()?.let {
                 viewModel.updateCity(it)
+                viewModel.downloadData()
+                findNavController().popBackStack()
             }
         }
     }
