@@ -43,12 +43,8 @@ fun Application.module(testing: Boolean = false) {
 
     routing {
         route("cities") {
-            get {
-                val list = repository.getAll()
-                call.respond(list)
-            }
 
-            get("/page") {
+            get {
                 val startId = call.request.queryParameters["startId"]?.toInt()
                 val pageSize = call.request.queryParameters["pageSize"]?.toInt()
                 val list =
