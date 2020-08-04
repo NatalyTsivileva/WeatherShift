@@ -45,7 +45,7 @@ fun Application.module(testing: Boolean = false) {
         route("cities") {
 
             get {
-                val startId = call.request.queryParameters["startId"]?.toInt()
+                val startId = call.request.queryParameters["startId"]?.toLong()
                 val pageSize = call.request.queryParameters["pageSize"]?.toInt()
                 val list =
                     if (startId == null || pageSize == null) {

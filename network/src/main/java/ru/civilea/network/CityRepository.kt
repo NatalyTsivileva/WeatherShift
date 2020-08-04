@@ -22,7 +22,7 @@ class CityRepository(
         return api.updateElem(elem)
     }
 
-    override suspend fun getPage(startId: Int, pageSize: Int): List<City> {
+    override suspend fun getPage(startId: Long, pageSize: Int): List<City> {
         //  TODO("Not yet implemented")
         return emptyList()
     }

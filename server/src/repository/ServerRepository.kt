@@ -45,7 +45,7 @@ class ServerRepository : Repository<City, CreateCityDto> {
         return counter
     }
 
-    override suspend fun getPage(startId: Int, pageSize: Int) = dbQuery {
+    override suspend fun getPage(startId: Long, pageSize: Int) = dbQuery {
         Cities
             .select { Cities.id.greater(startId) }
             .limit(pageSize)
