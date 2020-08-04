@@ -68,9 +68,9 @@ fun Application.module(testing: Boolean = false) {
                 val data = call.receive<City>()
                 val updatedCount = repository.updateElem(data)
                 if (updatedCount > 0) {
-                    call.respond(updatedCount)
+                    call.respond(HttpStatusCode.OK,updatedCount)
                 } else {
-                    call.respond(0)
+                    call.respond(HttpStatusCode.NotFound,0)
                 }
             }
         }
