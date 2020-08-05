@@ -3,11 +3,9 @@
 Simple application for request information about city and weather from server. In project use: 
 1. MVVM
 2. DI (Koin)
-3. (planned in future) Retrofit
-4. (planned in future) Coroutines
-5. (planned in future) Room/Realm
-
-Firebase can be used (?).
+3. Retrofit
+4. Coroutines
+5. Ktor for server
 
 Also, third-party libraries are used for design (lottie and CircleImageView)
 
